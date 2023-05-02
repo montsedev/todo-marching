@@ -1,8 +1,12 @@
-import { TodoItem } from './Components/TodoItem';
-import { TodoList } from './Components/TodoList';
-import { TodoSearch } from './Components/TodoSearch';
-import { TodoCounter } from './Components/TodoCounter'
-import { CreateTodoButton } from './Components/CreateTodoButton';
+//** dependence **//
+import { useState } from 'react';
+
+//** components **//
+import TodoItem  from './Components/TodoItem';
+import TodoList from './Components/TodoList';
+import TodoSearch from './Components/TodoSearch';
+import TodoCounter from './Components/TodoCounter';
+import TodoButtom from './Components/TodoButton';
 
 const todos = [
   { text: 'Cortar cebolla', completed: false },
@@ -11,6 +15,8 @@ const todos = [
 ]
 
 function App() {
+  const [ searchValue, setSearchValue ] = useState('');
+
   return (
     <>
       <TodoCounter />
@@ -22,7 +28,7 @@ function App() {
         ))
       }
       </TodoList>
-      <CreateTodoButton/>
+      <TodoButtom />
     </>
   );
 }
