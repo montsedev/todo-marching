@@ -12,7 +12,7 @@ function App() {
 
   try {
     if (!localStorageTodos) {
-      // Si el usuario es nuevo no existe un item en localStorage, por lo tanto guardamos uno con un array vacío
+      // if new user es nuevo no existe data en el localStorage
       localStorage.setItem('TODOS_V1', JSON.stringify([]))
       parsedTodos = []
     } else {
